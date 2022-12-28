@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Music Player</title>
+    <!-- for music player -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <!-- for cards -->
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+    </style>
+    <!-- for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- style sheet css file -->
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- container -->
+    <div class="grid-container">
+      <!-- for grid 1 -->
+      <div class="grid-item item1" id="rcorners1">
+        <div>
+          <img
+            class="profilepic"
+            src="/images/myprofilepic.jpg"
+            alt="myprofilepic"
+          />
+        </div>
+        <div class="name">
+          <h2>
+            Logesh N <br /><a id="emailid1" href="logeshn12@gmail.com"
+              >logeshn12@gmail.com</a
+            ><br /><br />
+          </h2>
+        </div>
+        <div class="browse">
+          <h1>Browse</h1>
+          <div class="sidebar">
+            <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+            <a href="#services"><i class="fa fa-fw fa-list"></i> Playlist</a>
+            <a href="#clients"><i class="fa fa-fw fa-user"></i> Artists</a>
+            <a href="#contact"><i class="fa fa-fw fa-inbox"></i> Albums</a>
+          </div>
+        </div>
+        <div id="discover1" class="discover">
+          <h1>Discover</h1>
+          <div class="sidebar">
+            <a href="#home"><i class="fa fa-fw fa-microphone"></i> Radio</a>
+            <a href="#services"
+              ><i class="fa fa-fw fa-calendar-check-o"></i> Event</a
+            >
+            <a href="#clients"><i class="fa fa-fw fa-podcast"></i> Podcast</a>
+            <a href="#contact"><i class="fa fa-fw fa-heart"></i> For You</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- for grid 2 -->
+      <div class="grid-item item2" id="rcorners2">
+        <div>
+          <form
+            class="example"
+            action="_blank"
+            style="margin: auto; max-width: 300px"
+          >
+            <input type="text" placeholder="Search for Songs" name="search2" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <div></div>
+        <h5>Top Music</h5>
+        <div class="row">
+          <div class="column">
+            <div class="card1">
+              <img
+                id="song1"
+                src="/images/Soorarai-Pottru (1).jpg"
+                alt="song1"
+              />
+            </div>
+            Soorarai Pottru
+            <h1>Agasam</h1>
+          </div>
+
+          <div class="column">
+            <div class="card1">
+              <img id="song1" src="/images/vivegam.jpeg" alt="song1" />
+            </div>
+            Vivegam
+            <h1>Never give up</h1>
+          </div>
+
+          <div class="column">
+            <div class="card1">
+              <img
+                id="song1"
+                src="/images/Soorarai-Pottru (1).jpg"
+                alt="song1"
+              />
+            </div>
+            Soorarai Pottru
+            <h1>Maara theme</h1>
+          </div>
+
+          <div class="column">
+            <div class="card1">
+              <img id="song1" src="/images/Anjaan.jpg" alt="song1" />
+            </div>
+            Anjaan
+            <h1>Bang Bang Bang</h1>
+          </div>
+
+          <div class="column">
+            <div class="card1">
+              <img
+                id="song1"
+                src="/images/Soorarai-Pottru (1).jpg"
+                alt="song1"
+              />
+            </div>
+            Soorarai Pottru
+            <h1>Veyyon Sili</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- for grid 3 -->
+      <div class="grid-item item3" id="rcorners3">
+        <div class="player">
+          <div class="details">
+            <div id="nowplaying" class="now-playing">
+              <h2>PLAYING x OF y</h2>
+            </div>
+            <div class="track-art"></div>
+            <div id="id1" class="track-name">Track Name</div>
+            <div id="id2" class="track-artist">Track Artist</div>
+          </div>
+          <div class="buttons">
+            <div class="prev-track" onclick="prevTrack()">
+              <i class="fa fa-step-backward fa-2x"></i>
+            </div>
+            <div class="playpause-track" onclick="playpauseTrack()">
+              <i class="fa fa-play-circle fa-2x"></i>
+            </div>
+            <div class="next-track" onclick="nextTrack()">
+              <i class="fa fa-step-forward fa-2x"></i>
+            </div>
+          </div>
+          <div class="slider_container">
+            <div id="time1" class="current-time">00:00</div>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="0"
+              class="seek_slider"
+              onchange="seekTo()"
+            />
+            <div id="time2" class="total-duration">00:00</div>
+          </div>
+          <div class="slider_container">
+            <i class="fa fa-volume-down"></i>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="99"
+              class="volume_slider"
+              onchange="setVolume()"
+            />
+            <i class="fa fa-volume-up"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
